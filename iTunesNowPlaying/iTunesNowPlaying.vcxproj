@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="event_handler.cpp" />
     <ClCompile Include="iTunesCOMInterface_i.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="np.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="event_handler.h" />
     <ClInclude Include="iTunesCOMInterface.h" />
     <ClInclude Include="np.h" />
   </ItemGroup>

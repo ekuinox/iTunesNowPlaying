@@ -4,14 +4,15 @@
 void main()
 {
 	try {
+		CoInitializeEx(0, COINIT_MULTITHREADED | COINIT_DISABLE_OLE1DDE);
+
 		auto np = new NowPlaying();
 
-		do {
-			if (np->update()) printf("Nowplaying %s - %s", np->get_artist(), np->get_title());
-		} while (getchar() == '\n'); // Enter押して更新，なにかしら入力してEnterすると終了
+		getchar();
+		delete np;
+		CoUninitialize();
 	}
 	catch (NowPlayingException e) {
-		printf("%s", e);
-	}
-	
+		printf("なにかがおきた %s", e.what());
+	}	
 }
